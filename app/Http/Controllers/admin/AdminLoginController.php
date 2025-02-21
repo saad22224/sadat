@@ -34,6 +34,6 @@ class AdminLoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return view('dashboard.login');
+        return redirect()->route('uniadmin');
     }
 }

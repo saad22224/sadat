@@ -41,10 +41,10 @@ Route::middleware('auth')->prefix('user')->group(function () {
 
 Route::get('uniadmin' , function(){
     return view('dashboard.login');
-});
+})->name('uniadmin');
 
 Route::post('uniadmin/login' , [AdminLoginController::class , 'login'])->name('admin.login');
-Route::post('uniadmin/logout' , [AdminLoginController::class , 'login'])->name('admin.logout');
+Route::post('uniadmin/logout' , [AdminLoginController::class , 'logout'])->name('admin.logout');
 
 
 
