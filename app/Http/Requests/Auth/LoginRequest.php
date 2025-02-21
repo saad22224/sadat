@@ -40,17 +40,25 @@ class LoginRequest extends FormRequest
     public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
-
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+    
+        // البحث عن المستخدم بناءً على البريد الإلكتروني
+        $user = \App\Models\User::where('email', $this->email)->where('user_type', 'student')->first();
+    
+        // التحقق من أن المستخدم موجود وكلمة المرور صحيحة
+        if (! $user || ! \Illuminate\Support\Facades\Hash::check($this->password, $user->password)) {
             RateLimiter::hit($this->throttleKey());
-
+    
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
             ]);
         }
-
+    
+        // تسجيل الدخول فقط إذا كان user_type هو "student"
+        Auth::login($user, $this->boolean('remember'));
+    
         RateLimiter::clear($this->throttleKey());
     }
+    
 
     /**
      * Ensure the login request is not rate limited.
