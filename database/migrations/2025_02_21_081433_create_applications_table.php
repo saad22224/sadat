@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string( 'identity_card');
             $table->string( 'user_avatar');
             $table->string('email')->unique();
+            
             $table->timestamps();
         });
     }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +36,19 @@ Route::middleware('auth')->prefix('user')->group(function () {
     Route::resource('application' , ApplicationController::class);
 }
 );
+
+
+Route::get('uniadmin' , function(){
+    return view('dashboard.login');
+});
+
+Route::post('uniadmin/login' , [AdminLoginController::class , 'login'])->name('admin.login');
+Route::post('uniadmin/logout' , [AdminLoginController::class , 'login'])->name('admin.logout');
+
+
+
+
+Route::get('uniadmin/index' , function(){
+    return view('dashboard.index');
+})->name('uniadmin.index');
 
