@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Application;
 
 class ApplicationController extends Controller
 {
@@ -12,7 +14,11 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        //
+        $adminUniversity = Auth::user()->university;
+        $applications = Application::where('university', $adminUniversity)->get();
+
+        return view('dashboard.applications' , compact('applications'));
+        // dd($applications);
     }
 
     /**
@@ -36,7 +42,8 @@ class ApplicationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $application = Application::find($id);
+        return view('dashboard.showapplication' , compact('application'));
     }
 
     /**
@@ -60,6 +67,8 @@ class ApplicationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $application  = Application::find($id);
+        $application->delete();
+        return redirect()->route('uniapplication.index');
     }
 }

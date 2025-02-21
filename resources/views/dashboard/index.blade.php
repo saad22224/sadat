@@ -16,19 +16,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/animate.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admn/css/animation.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap-select.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css') }}">
+<!-- Theme Style -->
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/animate.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/animation.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap-select.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css') }}">
 
+<!-- Font -->
+<link rel="stylesheet" href="{{ asset('admin/font/fonts.css') }}">
 
-
-    <!-- Font -->
-    <link rel="stylesheet" href="{{ asset('admin/font/fonts.css') }}">
-
-    <!-- Icon -->
-    <link rel="stylesheet" href="{{ asset('admin/icon/style.css') }}">
+<!-- Icon -->
+<link rel="stylesheet" href="{{ asset('admin/icon/style.css') }}">
 
     <!-- Favicon and Touch Icons  -->
 
@@ -87,41 +86,18 @@
                                     <li class="menu-item has-children">
                                         <a href="javascript:void(0);" class="menu-item-button">
                                             <div class="icon"><i class="icon-shopping-cart"></i></div>
-                                            <div class="text">المتجر</div>
+                                            <div class="text">التقديمات</div>
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="sub-menu-item">
-                                                <a href="add-product.html" class="">
-                                                    <div class="text">اضافة منتج</div>
+                                                <a href="{{ route('uniapplication.index') }}" class="">
+                                                    <div class="text"> التقديمات</div>
                                                 </a>
                                             </li>
-                                            <li class="sub-menu-item">
-                                                <a href="product-list.html" class="">
-                                                    <div class="text">المنتجات</div>
-                                                </a>
-                                            </li>
+                                           
                                         </ul>
                                     </li>
-                                    <li class="menu-item has-children">
-                                        <a href="javascript:void(0);" class="menu-item-button">
-                                            <div class="icon"><i class="icon-file-plus"></i></div>
-                                            <div class="text">الطلبات</div>
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li class="sub-menu-item">
-                                                <a href="oder-list.html" class="">
-                                                    <div class="text">الطلبات المرسلة</div>
-                                                </a>
-                                            </li>
-                                            
-                                            <li class="sub-menu-item">
-                                                <a href="oder-tracking.html" class="">
-                                                    <div class="text">تتبع الطلب</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -172,20 +148,24 @@
                                                     <img src="images/avatar/user-1.png" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-title mb-2">Carag</span>
-                                                    <span class="text-tiny">vendor</span>
+                                                    <span class="body-title mb-2">{{ auth()->user()->university }}</span>
+                                                    <span class="text-tiny">{{ auth()->user()->name }}</span>
                                                 </span>
                                             </span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton3">
                                             <li>
-                                                <a href="login.html" class="user-item">
+                                                <form action="{{ route('admin.logout') }}" method="post" >
+                                                    @csrf
+                                                    <button type="submit" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-log-out"></i>
                                                     </div>
                                                     <div class="body-title-2">Log out</div>
-                                                </a>
+                                                </button>
+                                                </form>
+                                              
                                             </li>
                                         </ul>
                                     </div>
@@ -200,7 +180,7 @@
                         <div class="main-content-inner">
                             <!-- main-content-wrap -->
                         <div class="text-center d-flex justify-content-center fs-1 fw-bold align-items-center col-12 vh-70">
-                            انت الان تستمتع بالخطة الفضية 
+                        مرحبا بك في لوحة تحكم كلية {{ auth()->user()->university}}
                         </div>
                         </div>
                         <!-- /main-content-wrap -->

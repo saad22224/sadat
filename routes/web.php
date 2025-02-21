@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\admin\ApplicationController as AdminApplicationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,3 +53,7 @@ Route::get('uniadmin/index' , function(){
     return view('dashboard.index');
 })->name('uniadmin.index');
 
+Route::middleware('auth')->prefix('uniadmin')->group(function () {
+    Route::resource('uniapplication' , AdminApplicationController::class);
+}
+);
