@@ -41,24 +41,15 @@
             <label for="university" class="block text-lg font-medium text-gray-700 text-right">اختر تخصصك
                 الجامعي:</label>
             <select id="university" name="university" class="mt-2 p-3 border rounded-lg w-64">
+            <option value="اختر الكليه" selected disabled> اختر الجامعه</option>
                 <option value="حاسبات ومعلومات">حاسبات ومعلومات</option>
-                <option value="طب">طب</option>
-                <option value="صيدلة">صيدلة</option>
-                <option value="هندسة">هندسة</option>
-                <option value="علوم">علوم</option>
-                <option value="تجارة">تجارة</option>
+                <option value="طب بيطري"> طب بيطري</option>
+                <option value="تربية طفولة ">تربية طفولة </option>
+                <option value="تربية عام">  تربية عام</option>
+                <option value="تجارة "> تجارة  </option>
                 <option value="حقوق">حقوق</option>
-                <option value="آداب">آداب</option>
-                <option value="تمريض">تمريض</option>
-                <option value="تربية">تربية</option>
-                <option value="زراعة">زراعة</option>
-                <option value="إعلام">إعلام</option>
-                <option value="سياحة وفنادق">سياحة وفنادق</option>
-                <option value="فنون جميلة">فنون جميلة</option>
-                <option value="فنون تطبيقية">فنون تطبيقية</option>
-                <option value="دار العلوم">دار العلوم</option>
-                <option value="الألسن">الألسن</option>
                 <option value="الدراسات الإسلامية">الدراسات الإسلامية</option>
+                <option value="سياحة وفنادق "> سياحة وفنادق </option>
                 <option value="التربية الرياضية">التربية الرياضية</option>
             </select>
         </div>

@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap-select.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Font -->
     <link rel="stylesheet" href="{{ asset('admin/font/fonts.css') }}">
@@ -71,7 +72,7 @@
                                         </a>
                                         <ul class="sub-menu" style="display: block;">
                                             <li class="sub-menu-item">
-                                                <a href="index.html" class="active">
+                                                <a href="{{ route('uniadmin.index') }}" class="active">
                                                     <div class="text">الرئيسية</div>
                                                 </a>
                                             </li>
@@ -124,15 +125,7 @@
                                     <i class="icon-moon"></i>
                                 </div>
                                 <div class="popup-wrap noti type-header">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="header-item">
-                                                <span class="text-tiny">1</span>
-                                                <i class="icon-bell"></i>
-                                            </span>
-                                        </button>
-                                    </div>
+                                 
                                 </div>
                                 <div class="header-item button-zoom-maximize">
                                     <div class="">
@@ -188,7 +181,7 @@
                                         <div class="wg-filter flex-grow">
                                             <form class="form-search">
                                                 <fieldset class="name">
-                                                    <input type="text" placeholder="Search here..." class="" name="name"
+                                                    <input id="search"  type="text" placeholder="Search here..." class="" name="name"
                                                         tabindex="2" value="" aria-required="true" required="">
                                                 </fieldset>
                                                 <div class="button-submit">
@@ -225,7 +218,7 @@
                                                 <div class="body-title">الاضافات</div>
                                             </li>
                                         </ul>
-                                        <ul class="flex flex-column">
+                                        <ul id="table" class="flex flex-column">
                                             <li class="product-item gap14">
                                                 <div class="image no-bg">
                                                     <img src="images/products/51.png" alt="">
@@ -307,7 +300,22 @@
         <!-- <script src="{{ asset('assets/admin/js/switcher.js') }}"></script> -->
         <script src="{{ asset('admin/js/theme-settings.js') }}"></script>
         <script src="{{ asset('admin/js/main.js') }}"></script>
+        <script>
+        $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                var found = false;
 
+                $("#table").filter(function() {
+                    var isVisible = $(this).text().toLowerCase().indexOf(value) > -1;
+                    $(this).toggle(isVisible);
+                    if (isVisible) found = true;
+                });
+
+                $(".no-results").toggle(!found);
+            });
+        });
+    </script>
 </body>
 
 </html>

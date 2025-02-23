@@ -71,7 +71,7 @@
                                         </a>
                                         <ul class="sub-menu" style="display: block;">
                                             <li class="sub-menu-item">
-                                                <a href="index.html" class="active">
+                                                <a href="{{ route('uniadmin.index') }}" class="active">
                                                     <div class="text">الرئيسية</div>
                                                 </a>
                                             </li>
@@ -124,15 +124,7 @@
                                     <i class="icon-moon"></i>
                                 </div>
                                 <div class="popup-wrap noti type-header">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="header-item">
-                                                <span class="text-tiny">1</span>
-                                                <i class="icon-bell"></i>
-                                            </span>
-                                        </button>
-                                    </div>
+                                  
                                 </div>
                                 <div class="header-item button-zoom-maximize">
                                     <div class="">

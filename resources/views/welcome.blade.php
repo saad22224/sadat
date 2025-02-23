@@ -9,7 +9,7 @@
 <body class="bg-gray-100">
     <div class="min-h-screen flex flex-col items-center justify-center">
         <h1 class="text-4xl font-bold text-blue-700 mb-4">منصة الجامعات المصرية</h1>
-        <p class="text-lg text-gray-700 mb-6">بوابتك للتسجيل في الجامعات المصرية بسهولة</p>
+        <p class="text-lg text-gray-700 mb-6">بوابتك للتسجيل في  جامعة السادات  بسهولة</p>
         
         <div class="space-x-4">
             @if(Route::has('login'))
