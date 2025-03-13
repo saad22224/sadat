@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/dashboard', function () {
@@ -32,28 +32,42 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-Route::middleware('auth')->prefix('user')->group(function () {
-    Route::resource('application' , ApplicationController::class);
-}
+require __DIR__ . '/auth.php';
+Route::middleware('auth')->group(
+    function () {
+        Route::resource('application', ApplicationController::class);
+    }
 );
 
+Route::get('/new1', function () {
+    return view('new1');
+});
+Route::get('/new2', function () {
+    return view('new2');
+});
+Route::get('/new3', function () {
+    return view('new3');
+});
 
-Route::get('uniadmin' , function(){
+
+// admin routes
+
+Route::get('uniadmin', function () {
     return view('dashboard.login');
 })->name('uniadmin');
 
-Route::post('uniadmin/login' , [AdminLoginController::class , 'login'])->name('admin.login');
-Route::post('uniadmin/logout' , [AdminLoginController::class , 'logout'])->name('admin.logout');
+Route::post('uniadmin/login', [AdminLoginController::class, 'login'])->name('admin.login');
+Route::post('uniadmin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 
 
 
 
-Route::get('uniadmin/index' , function(){
+Route::get('uniadmin/index', function () {
     return view('dashboard.index');
 })->name('uniadmin.index');
 
-Route::middleware('auth')->prefix('uniadmin')->group(function () {
-    Route::resource('uniapplication' , AdminApplicationController::class);
-}
+Route::middleware('auth')->prefix('uniadmin')->group(
+    function () {
+        Route::resource('uniapplication', AdminApplicationController::class);
+    }
 );
