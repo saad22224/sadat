@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="shortcut icon" href="./assets/images (12).jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/images (12).jpg')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>جامعة السادات</title>
     <style>
@@ -173,12 +173,12 @@
     <header>
         <nav class="p-4 flex justify-between items-center h-20 ">
             <!-- Left Section: Logo -->
-         
+         <a href="{{url('/')}}" style="cursor: pointer">
             <div data-aos="fade-right" data-aos-duration="2000" style="display: flex; justify-content: center; align-items: center;">
                 <img src="./assets/images (12).jpg" alt="Logo" class="h-20" style="margin-top: 20px;" >
                 <p style="margin-left: 10px; font-weight: bolder; font-size: 20px; display: flex; flex-direction: column;">    جامعة <span>السادات</span></p>
             </div>
-
+        </a>
             <!-- Right Section: Menu Button & Search -->
             <div class="flex h-full" data-aos="fade-left" data-aos-duration="2000">
                 <!-- Search Button & Box -->
@@ -223,7 +223,7 @@
 
         </div>
         <div class="mt-8 flex flex-col space-y-4" >
-            <a href="#" class="text-3xl nav-link hover:text-yellow-200 " style="margin-left: 40px; margin-top: 30px;">الرئيسية</a>
+            <a href="{{url('/')}}" class="text-3xl nav-link hover:text-yellow-200 " style="margin-left: 40px; margin-top: 30px;">الرئيسية</a>
             <!-- <a href="#" class="text-xl nav-link hover:text-yellow-200"> عنا</a> -->
             <a href="{{route('application.index')}}" class="text-3xl nav-link hover:text-yellow-200 "  style="margin-left: 40px; margin-top: 30px;">التقديم</a>
             <a href="https://credit.usc.edu.eg/static/index.html" target="_blank" class="text-3xl nav-link hover:text-yellow-200 " style="margin-left: 40px; margin-top: 30px;">ابن الهيثم</a>
