@@ -73,7 +73,7 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'tourism@gmail.com',
             'password' => bcrypt('12345678'),
-            'university' => ' سياحة وفنادق  ',
+            'university' => 'سياحة وفنادق',
             'user_type' => 'admin',
         ]);
 
