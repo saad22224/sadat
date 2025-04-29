@@ -8,7 +8,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('assets/images (12).jpg')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>جامعة السادات</title>
+    <title>جامعة مدينة السادات الأهلية </title>
     <style>
         html {
             /* overflow-y: hidden; */
@@ -18,7 +18,11 @@
         header {
             position: relative;
             /* ضروري ليعمل الـ ::before بشكل صحيح */
-            background-image: url(assets/صورة\ واتساب\ بتاريخ\ 1446-09-12\ في\ 18.42.40_b9709584.jpg);
+            /* background-image: url(assets/صورة\ واتساب\ بتاريخ\ 1446-09-12\ في\ 18.42.40_b9709584.jpg); */
+            background-image: url('/assets/صورة%20واتساب%20بتاريخ%201446-11-01%20في%2021.55.43_05d22640.jpg');
+
+
+
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -176,7 +180,8 @@
          <a href="{{url('/')}}" style="cursor: pointer">
             <div data-aos="fade-right" data-aos-duration="2000" style="display: flex; justify-content: center; align-items: center;">
                 <img src="./assets/images (12).jpg" alt="Logo" class="h-20" style="margin-top: 20px;" >
-                <p style="margin-left: 10px; font-weight: bolder; font-size: 20px; display: flex; flex-direction: column;">    جامعة <span>السادات</span></p>
+                <p style="margin-left: 10px; font-weight: bolder; font-size: 20px; display: flex; flex-direction: column;">  
+                   جامعة مدينة <span>السادات الاهلية</span></p>
             </div>
         </a>
             <!-- Right Section: Menu Button & Search -->
@@ -202,9 +207,9 @@
         <section class="h-screen bg-cover bg-center "  data-aos="fade-down"
         data-aos-easing="linear" data-aos-duration="2000" style="display: flex; justify-content:
      center; align-items: center; flex-direction: column;">
-            <h1 style="font-size: 30px; margin-bottom: 20px; font-weight: bolder;">جامعة السادات</h1>
-            <p style="font-size: 20px;">جامعة مدينة السادات، جامعة مصرية حكومية مقرها مدينة السادات شمال غرب القاهرة
-                الكبرى، أُنشئت بموجب القرار الجمهوري بتاريخ 25 مارس 2013م</p>
+            <h1 style="font-size: 30px; margin-bottom: 20px; font-weight: bolder;"> جامعة مدينة السادات الأهلية</h1>
+            {{-- <p style="font-size: 20px;">جامعة مدينة السادات، جامعة مصرية حكومية مقرها مدينة السادات شمال غرب القاهرة
+                الكبرى، أُنشئت بموجب القرار الجمهوري بتاريخ 25 مارس 2013م</p> --}}
         </section>
     </header>
     <div class="white-line2"></div>
@@ -215,7 +220,7 @@
             <div style="display: flex; justify-content: center; align-items: center;">
 
                 <img src="./assets/images (12).jpg"  style="margin-left: 40px; margin-top: 30px;" alt="Logo" class="h-12">
-                <p style="margin-left: 10px; font-weight: bolder; font-size: 20px; display: flex;  margin-top: 30px; flex-direction: column;">    جامعة <span>السادات</span></p>
+                <p style="margin-left: 10px; font-weight: bolder; font-size: 20px; display: flex;  margin-top: 30px; flex-direction: column;">    جامعة مدينة  <span>السادات الأهلية</span></p>
             </div>
 
             <button id="closeMenu" class="text-white bg-gray-700 rounded-full w-10 h-10 flex items-center
