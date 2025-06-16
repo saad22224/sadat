@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
-            'university' => 'حاسبات ومعلومات',
+            'university' => 'الحاسبات والمعلومات والذكاء الاصطناعي',
             'user_type' => 'admin',
         ]);
 

@@ -125,7 +125,7 @@
                                     <i class="icon-moon"></i>
                                 </div>
                                 <div class="popup-wrap noti type-header">
-                                 
+
                                 </div>
                                 <div class="header-item button-zoom-maximize">
                                     <div class="">
@@ -181,26 +181,28 @@
                                         <div class="wg-filter flex-grow">
                                             <form class="form-search">
                                                 <fieldset class="name">
-                                                    <input id="search"  type="text" placeholder="Search here..." class="" name="name"
-                                                        tabindex="2" value="" aria-required="true" required="">
+                                                    <input id="search" type="text" placeholder="Search here..."
+                                                        class="" name="name" tabindex="2" value=""
+                                                        aria-required="true" required="">
                                                 </fieldset>
                                                 <div class="button-submit">
-                                                    <button class="" type="submit"><i class="icon-search"></i></button>
+                                                    <button class="" type="submit"><i
+                                                            class="icon-search"></i></button>
                                                 </div>
                                             </form>
                                         </div>
-                                     
+
                                     </div>
                                     <div class="wg-table table-all-category">
                                         <ul class="table-title flex gap20 mb-14">
                                             <li>
-                                                <div class="body-title"> الإسم</div>
+                                                <div class="body-title">الإسم</div>
                                             </li>
                                             <li>
-                                                <div class="body-title"> البريد الإلكتروني</div>
+                                                <div class="body-title">البريد الإلكتروني</div>
                                             </li>
                                             <li>
-                                                <div class="body-title"> رقم الهاتف</div>
+                                                <div class="body-title">رقم الهاتف</div>
                                             </li>
                                             <li>
                                                 <div class="body-title">تاريخ الميلاد</div>
@@ -209,23 +211,22 @@
                                                 <div class="body-title">الرقم القومي</div>
                                             </li>
                                             <li>
-                                                <div class="body-title"> المدرسة الثانوية</div>
+                                                <div class="body-title">المدرسة الثانوية</div>
                                             </li>
                                             <li>
-                                                <div class="body-title">تاريخ التخرج </div>
+                                                <div class="body-title">تاريخ التخرج</div>
                                             </li>
                                             <li>
                                                 <div class="body-title">الاضافات</div>
                                             </li>
                                         </ul>
+
                                         <ul id="table" class="flex flex-column">
-                                            <li class="product-item gap14">
-                                                <div class="image no-bg">
-                                                    <img src="images/products/51.png" alt="">
-                                                </div>
-                                                @foreach ($applications as $application)
-
-
+                                            @foreach ($applications as $application)
+                                                <li class="product-item gap14">
+                                                    <div class="image no-bg">
+                                                        <img src="images/products/51.png" alt="">
+                                                    </div>
                                                     <div class="flex items-center justify-between gap20 flex-grow">
                                                         <div class="name">
                                                             <a href="{{ route('uniapplication.show', $application->id) }}"
@@ -233,13 +234,14 @@
                                                                 {{ $application->name }}
                                                             </a>
                                                         </div>
-                                                        <div class="body-text"> {{ $application->email }}</div>
-                                                        <div class="body-text"> {{ $application->phone }}</div>
-                                                        <div class="body-text"> {{ $application->dob }}</div>
-                                                        <div class="body-text"> {{ $application->national_number }}</div>
+                                                        <div class="body-text">{{ $application->email }}</div>
+                                                        <div class="body-text">{{ $application->phone }}</div>
+                                                        <div class="body-text">{{ $application->dob }}</div>
+                                                        <div class="body-text">{{ $application->national_number }}
+                                                        </div>
                                                         <div>
-                                                            <div class="block-available"> {{ $application->high_school }}
-                                                            </div>
+                                                            <div class="block-available">
+                                                                {{ $application->high_school }}</div>
                                                         </div>
                                                         <div>
                                                             <div class="block-tracking">
@@ -257,18 +259,17 @@
                                                                 method="post">
                                                                 @csrf
                                                                 @method('delete')
-                                                                <button type="submit" class="item ">
+                                                                <button type="submit" class="item">
                                                                     <i class="icon-trash-2"></i>
                                                                 </button>
                                                             </form>
                                                         </div>
                                                     </div>
-                                                @endforeach
-                                            </li>
-
+                                                </li>
+                                            @endforeach
                                         </ul>
+                                        <div class="divider"></div>
                                     </div>
-                                    <div class="divider"></div>
 
                                 </div>
                                 <!-- /main-content-wrap -->
@@ -301,21 +302,21 @@
         <script src="{{ asset('admin/js/theme-settings.js') }}"></script>
         <script src="{{ asset('admin/js/main.js') }}"></script>
         <script>
-        $(document).ready(function(){
-            $("#search").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                var found = false;
+            $(document).ready(function() {
+                $("#search").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    var found = false;
 
-                $("#table").filter(function() {
-                    var isVisible = $(this).text().toLowerCase().indexOf(value) > -1;
-                    $(this).toggle(isVisible);
-                    if (isVisible) found = true;
+                    $("#table").filter(function() {
+                        var isVisible = $(this).text().toLowerCase().indexOf(value) > -1;
+                        $(this).toggle(isVisible);
+                        if (isVisible) found = true;
+                    });
+
+                    $(".no-results").toggle(!found);
                 });
-
-                $(".no-results").toggle(!found);
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
